@@ -1,22 +1,19 @@
 <script>
     import Catimage from "./Catimage.svelte";
+    import Chatbox from "./components/Chatbox.svelte";
     let dimentions = {width:'500', height:'300'}
 </script>
 
-
-<h1>Welcome to Penis</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
-<div class='inputs'>
-    <input type="number" id='width' name='width' bind:value="{dimentions.width}">
-    <input type="number" id='width' name='width' bind:value="{dimentions.height}">
+<div class="title">
+    <h1>Welcome to Penis</h1>
 </div>
-<div>
-    <Catimage width={dimentions.width} height={dimentions.height}/>
-</div>
+
+
+<Chatbox />
 
 <style>
-    .inputs {
-  padding-bottom: 1rem;
-}
+    .title {
+        padding-bottom: 5%;
+        text-align: center;
+    }
 </style>
