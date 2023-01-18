@@ -1,6 +1,7 @@
 <script>
 
 import { chatInfo, chatMessages } from "../stores/chatSession";
+import { fade } from 'svelte/transition';
 
 function returnSenderLabel (messageLabel) {
     return messageLabel ? "User:" : "Bot:";
@@ -23,8 +24,6 @@ function submitMessage() {
     addToMessages(chatObject);
     chatInput = ''
 };
-
-
 
 </script>
 
@@ -52,7 +51,9 @@ function submitMessage() {
         background-color: rgb(167, 165, 165);
         color: azure;
         border-radius: 1rem;
-        margin: 1% 2%;
+        margin: auto;
+        width: 90vw;
+        height: auto;
         overflow: hidden;
     }
     .chatHistory {
