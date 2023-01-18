@@ -1,5 +1,4 @@
 <script>
-    import Catimage from "./Catimage.svelte";
     import Chatbox from "./components/Chatbox.svelte";
     let dimentions = {width:'500', height:'300'}
 </script>

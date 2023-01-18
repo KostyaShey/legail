@@ -1,42 +1,55 @@
 <script>
 
-    let chatSession = {
-        id: 1,
-        ownerToken: 'something something',
-        title: 'Apple',
-        messages: [
-            {
-                id: "asjnfdoijnasoidfj",
-                sender: "user",
-                text: "lorem ipsum dolores"
-            },
-            {
-                id: "asjnidfj",
-                sender: "computer",
-                text: "lorem ipsum dolores"
-            }
-        ]
+import { chatInfo, chatMessages } from "../stores/chatSession";
+
+function returnSenderLabel (messageLabel) {
+    return messageLabel ? "User:" : "Bot:";
+};
+
+let chatInput = '';
+
+const addToMessages = (chatObbject) => {
+		$chatMessages = [...$chatMessages, chatObbject];
+};
+
+function submitMessage() {
+    
+    const chatObject = {
+        id: Date.now(),
+        userMessage: true,
+        text: chatInput
     }
+
+    addToMessages(chatObject);
+    chatInput = ''
+};
+
+
 
 </script>
 
 <div class="chatbox">
     <div class="chatTitle">
-        <p>{chatSession.title}</p>
+        <p>{$chatInfo.title}</p>
     </div>
     
     <div class="chatHistory">
-        {#each chatSession.messages as message}
-            <div class="chatMessage-{message.sender}">
-                <p>{message.sender}: {message.text}</p>
+        {#each $chatMessages as message}
+            <div class:chatMessageUser={message.userMessage} class:chatMessageComputer={!message.userMessage}>
+                <p>{returnSenderLabel(message.userMessage)} {message.text}</p>
             </div>
         {/each}
     </div>
+    <div class="chatInput">
+        <input type="input" bind:value={chatInput} name="name" />
+        <button on:click={submitMessage}>></button>
+    </div>
 </div>
+
 
 <style>
     .chatbox {
-        background-color: black;
+        background-color: rgb(167, 165, 165);
         color: azure;
         border-radius: 1rem;
         margin: 1% 2%;
@@ -49,10 +62,30 @@
         background-color: grey;
         padding: 1% 5%;
     }
-    .chatMessage-user {
+    .chatMessageUser {
         text-align: end;
     }
-    .chatMessage-computer {
+    .chatMessageComputer {
         color: green;
     }
+    .chatInput {
+		display: grid;
+		grid-template-columns: repeat(2, 88% 5%);
+		grid-gap: 5%;
+        padding: 2% 5%;
+        margin-bottom: 5%;
+	}
+    button {
+        width: 2rem;
+        height: 2rem;
+    }
+    input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        background: transparent;
+        border-bottom: 2px solid black;
+    }
+    
+    
 </style>
