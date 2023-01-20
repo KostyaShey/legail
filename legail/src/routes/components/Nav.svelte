@@ -36,7 +36,7 @@
 </script>
 
 
-<nav class="navigation" class:noMarginBottom={showMenu}>
+<nav class="navigation">
     <div class="title">
         {#if showTitle}
             <h1 transition:typewriter>L-AI-zy Lawyer</h1> 
@@ -66,10 +66,6 @@
         background: rgba(255, 255, 255, 0.8);
         margin-bottom: 3%;
         box-shadow: 1px 5px 10px black;
-    }
-
-    .noMarginBottom {
-        margin-bottom: 0%;
     }
 
     .title {

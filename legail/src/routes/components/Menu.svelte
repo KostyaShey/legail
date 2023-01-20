@@ -2,6 +2,7 @@
     import { loginState } from "../stores/appState";
     import { menuOptions } from "../stores/appState";
     import { slide } from 'svelte/transition';
+
 </script>
 
 <div class="menu">
@@ -41,5 +42,8 @@
     .menuOption {
         text-align: end;
         margin: 5% 0%;
+    }
+    button {
+        min-width: 4rem;
     }
 </style>
