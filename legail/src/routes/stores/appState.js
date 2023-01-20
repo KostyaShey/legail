@@ -1,5 +1,5 @@
 import { subscribe } from "svelte/internal";
-import { writable } from "svelte/store";
+import { writable, readable } from "svelte/store";
 
 
 
@@ -14,3 +14,5 @@ function createLoginState() {
 }
 
 export const loginState = createLoginState();
+
+export const menuOptions = readable(["Questions", "Profile", "Settings", "Your Mom"])

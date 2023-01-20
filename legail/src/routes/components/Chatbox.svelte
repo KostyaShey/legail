@@ -2,6 +2,7 @@
 
 import { chatInfo, chatMessages } from "../stores/chatSession";
 import { fade } from 'svelte/transition';
+	import { debug } from "svelte/internal";
 
 function returnSenderLabel (messageLabel) {
     return messageLabel ? "User:" : "Bot:";
@@ -9,25 +10,25 @@ function returnSenderLabel (messageLabel) {
 
 let chatInput = '';
 
-const addToMessages = (chatObbject) => {
-		$chatMessages = [...$chatMessages, chatObbject];
+const addToMessages = (chatObject) => {
+		$chatMessages = [...$chatMessages, chatObject];
 };
 
 function submitMessage() {
     
     const chatObject = {
-        id: Date.now(),
+        id: crypto.randomUUID(),
         userMessage: true,
         text: chatInput
     }
-
+    
     addToMessages(chatObject);
     chatInput = ''
 };
 
 </script>
 
-<div class="chatbox">
+<div transition:fade class="chatbox">
     <div class="chatTitle">
         <p>{$chatInfo.title}</p>
     </div>
