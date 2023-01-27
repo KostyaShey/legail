@@ -26,3 +26,8 @@ button:hover {
     margin-bottom: 3%;
     box-shadow: 1px 5px 10px black;
 }
+
+.centered {
+    display: flex;
+    justify-content:center;
+}

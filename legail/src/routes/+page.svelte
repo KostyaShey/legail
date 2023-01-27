@@ -1,13 +1,12 @@
 <script>
-    import Chatbox from "./components/Chatbox.svelte";
+    import UserConversations from "./components/UserConversations.svelte";
     import LoginPage from "./components/LoginPage.svelte";
     import { loginState } from "./stores/appState";
-
 </script>
 
 
 {#if $loginState}
-    <Chatbox />
+    <UserConversations />
 {:else}
     <LoginPage />
 {/if}
