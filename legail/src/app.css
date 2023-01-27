@@ -1,11 +1,14 @@
 body {
-    background-image: url('../static/background.webp');
+    background-image: url('../static/vintage-judicial-system-elements-set-with-judge-handcuffs-police-badge-scales-gavel-feather-law-book-themis-statue-courthouse-isolated_1284-38527.webp');
     background-repeat: repeat;
+    background-size: 30%;
     margin: auto;
 }
 
 button {
     background-color: transparent;
+    min-width: 3rem;
+    min-height: 3rem;
 }
 
 button:hover {
@@ -15,14 +18,12 @@ button:hover {
 .mi {
     font-size: 1.4rem;
 }
-/* Use this to make sure screen readers read something sensible when encountering the mi. If you are using the icons decoratively, you can omit the <span> */
-.u-sr-only {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+
+.default-container {
+    background-color: rgb(247, 243, 244, 0.9);
+    color: black;
+    margin-bottom: 3%;
+    box-shadow: 1px 5px 10px black;
 }
 
 p {

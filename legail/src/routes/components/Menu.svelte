@@ -5,7 +5,7 @@
 
 </script>
 
-<div class="menu">
+<div class="menu default-container">
     <div class="loginArea" transition:slide>
         {#if $loginState}
             <p>Currently logged in as "User"</p><button on:click={loginState.change}>Logout</button>
@@ -30,7 +30,6 @@
     .menu {
         padding: 4% 5%;
         margin-bottom: 3%;
-        background: rgba(255, 255, 255, 0.8);
         box-shadow: 1px 5px 10px black;
     }
     .loginArea {

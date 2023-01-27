@@ -2,7 +2,7 @@
     import { fade } from 'svelte/transition';
 </script>
 
-<div transition:fade class="loginArea">
+<div transition:fade class="loginArea default-container">
     <p>You log in now!</p>
 </div>
 
@@ -11,13 +11,8 @@
         display: flex;
         align-items:center;
         justify-content:center;
-        margin: auto;
-        background-color: crimson;
-        color: azure;
-        width: 80vw;
         height: 40vh;
         padding: 3% 5%;
         font-size: 4rem;
-        border-radius: 1rem;
     }
 </style>

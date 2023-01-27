@@ -36,7 +36,7 @@
 </script>
 
 
-<nav class="navigation">
+<nav class="navigation default-container">
     <div class="title">
         {#if showTitle}
             <h1 transition:typewriter>L-AI-zy Lawyer</h1> 
@@ -61,11 +61,9 @@
     .navigation {
         display: flex;
         justify-content: space-between;
-        height: 3vh;
+        align-items:center;
+        height: auto;
         padding: 4% 5%;
-        background: rgba(255, 255, 255, 0.8);
-        margin-bottom: 3%;
-        box-shadow: 1px 5px 10px black;
     }
 
     .title {
