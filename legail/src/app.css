@@ -31,3 +31,12 @@ button:hover {
     display: flex;
     justify-content:center;
 }
+
+.clickableIcon {
+    caret-color: transparent;
+    min-width: 3rem;
+    min-height: 3rem;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}

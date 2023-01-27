@@ -1,8 +1,11 @@
 <script>
 
 import { chatInfo, chatMessages } from "../stores/chatSession";
-import { fade, slide } from 'svelte/transition';
-	import { debug } from "svelte/internal";
+import { slide } from 'svelte/transition';
+import ChatTitle from "./ChatTitle.svelte";
+
+let minimized = false;
+const minimizedToggle = () => {minimized = !minimized;}
 
 function returnSenderLabel (messageLabel) {
     return messageLabel ? "User:" : "Bot:";
@@ -29,21 +32,23 @@ function submitMessage() {
 </script>
 
 <div transition:slide class="chatbox default-container">
-    <div class="chatTitle">
-        <p>{$chatInfo.title}</p>
-    </div>
     
-    <div class="chatHistory">
-        {#each $chatMessages as message}
-            <div class:chatMessageUser={message.userMessage} class:chatMessageComputer={!message.userMessage}>
-                <p>{returnSenderLabel(message.userMessage)} {message.text}</p>
-            </div>
-        {/each}
-    </div>
-    <div class="chatInput">
-        <input type="input" bind:value={chatInput} name="name" />
-        <button on:click={submitMessage}>></button>
-    </div>
+    <ChatTitle title={$chatInfo.title} minimizedToggle={minimizedToggle} minimizedState={minimized}/>
+    
+    {#if !minimized}
+        <div class="chatHistory">
+            {#each $chatMessages as message}
+                <div class:chatMessageUser={message.userMessage} class:chatMessageComputer={!message.userMessage}>
+                    <p>{returnSenderLabel(message.userMessage)} {message.text}</p>
+                </div>
+            {/each}
+        </div>
+        <div class="chatInput">
+            <input type="input" bind:value={chatInput} name="name" />
+            <button on:click={submitMessage}>></button>
+        </div>
+    {/if}
+    
 </div>
 
 
@@ -53,12 +58,9 @@ function submitMessage() {
         overflow: hidden;
     }
     .chatHistory {
-        margin: 0% 5% 5% 5%;
+        margin: 7% 5% 5% 5%;
     }
-    .chatTitle {
-        background-color: rgb(255, 255, 255);
-        padding: 1% 5%;
-    }
+
     .chatMessageUser {
         text-align: end;
     }

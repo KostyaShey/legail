@@ -1,8 +1,8 @@
 <script>
-
+    import { slide } from 'svelte/transition';
 </script>
 
-<div class="centered">
+<div transition:slide class="centered">
     <button>Add converstation</button>
 </div>
 

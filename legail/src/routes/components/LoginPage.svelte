@@ -1,11 +1,11 @@
 <script>
-    import { fade, slide } from 'svelte/transition';
+    import { slide } from 'svelte/transition';
 </script>
 
 <div transition:slide class="loginArea default-container centered">
     <p>Tired of reading contracts?</p>
     <p>Ask our AI to read them for you! </p>
-    <p>It will answer your qouestions about anything related to it!</p>
+    <p>It will answer any of your questions related to them!</p>
 </div>
 
 <style>
