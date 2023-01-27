@@ -43,13 +43,11 @@
         {/if}
     </div>
     
-    <div class="menuToggle">
-        {#if $loginState}
-            <button on:click={menuToggle}><i class="mi mi-menu"><span class="u-sr-only"></span></i></button>
-        {:else}
-            <button on:click={menuToggle}><i class="mi mi-menu"><span class="u-sr-only"></span></i></button>
-        {/if}
+    <div class="clickableIcon" on:click={menuToggle}>
+        <i class="mi mi-menu"><span class="u-sr-only"></span></i>
     </div>
+
+
 </nav>
 
 {#if showMenu}
@@ -71,20 +69,9 @@
         justify-content: center;
     }
 
-    .menuToggle {
-        display: flex;
-        justify-content: center;
-    }
-
     h1 {
         font-size: 1.5rem;
         margin: auto;
     }
-    button {
-        background-color: transparent;
-    }
 
-    button:hover {
-        box-shadow: 1px 3px 5px black;
-    }
 </style>

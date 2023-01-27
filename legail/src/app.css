@@ -33,10 +33,17 @@ button:hover {
 }
 
 .clickableIcon {
+    overflow: hidden;
     caret-color: transparent;
     min-width: 3rem;
     min-height: 3rem;
     display: flex;
     justify-content:center;
     align-items:center;
+}
+
+.clickableIcon i {
+    font-size: 2rem;
+    position: absolute;
+    padding-top: 1%;
 }

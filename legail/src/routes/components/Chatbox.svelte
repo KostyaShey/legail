@@ -36,16 +36,18 @@ function submitMessage() {
     <ChatTitle title={$chatInfo.title} minimizedToggle={minimizedToggle} minimizedState={minimized}/>
     
     {#if !minimized}
-        <div class="chatHistory">
-            {#each $chatMessages as message}
-                <div class:chatMessageUser={message.userMessage} class:chatMessageComputer={!message.userMessage}>
-                    <p>{returnSenderLabel(message.userMessage)} {message.text}</p>
-                </div>
-            {/each}
-        </div>
-        <div class="chatInput">
-            <input type="input" bind:value={chatInput} name="name" />
-            <button on:click={submitMessage}>></button>
+        <div transition:slide>
+            <div class="chatHistory">
+                {#each $chatMessages as message}
+                    <div class:chatMessageUser={message.userMessage} class:chatMessageComputer={!message.userMessage}>
+                        <p>{returnSenderLabel(message.userMessage)} {message.text}</p>
+                    </div>
+                {/each}
+            </div>
+            <div class="chatInput">
+                <input type="input" bind:value={chatInput} name="name" />
+                <button on:click={submitMessage}>></button>
+            </div>
         </div>
     {/if}
     
@@ -55,7 +57,6 @@ function submitMessage() {
 <style>
     .chatbox {
         height: auto;
-        overflow: hidden;
     }
     .chatHistory {
         margin: 7% 5% 5% 5%;
