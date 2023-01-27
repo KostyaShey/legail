@@ -1,18 +1,20 @@
 <script>
-    import { fade } from 'svelte/transition';
+    import { fade, slide } from 'svelte/transition';
 </script>
 
-<div transition:fade class="loginArea default-container">
-    <p>You log in now!</p>
+<div transition:slide class="loginArea default-container">
+    <p>Tired of reading contracts?</p>
+    <p>Ask our AI to read them for you! </p>
+    <p>It will answer your qouestions about anything related to it!</p>
 </div>
 
 <style>
     .loginArea {
         display: flex;
-        align-items:center;
+        flex-direction: column;
         justify-content:center;
         height: 40vh;
         padding: 3% 5%;
-        font-size: 4rem;
+        font-size: 1rem;
     }
 </style>

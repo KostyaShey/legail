@@ -1,7 +1,7 @@
 <script>
 
 import { chatInfo, chatMessages } from "../stores/chatSession";
-import { fade } from 'svelte/transition';
+import { fade, slide } from 'svelte/transition';
 	import { debug } from "svelte/internal";
 
 function returnSenderLabel (messageLabel) {
@@ -28,7 +28,7 @@ function submitMessage() {
 
 </script>
 
-<div transition:fade class="chatbox">
+<div transition:slide class="chatbox default-container">
     <div class="chatTitle">
         <p>{$chatInfo.title}</p>
     </div>
@@ -49,11 +49,6 @@ function submitMessage() {
 
 <style>
     .chatbox {
-        background-color: rgb(167, 165, 165);
-        color: azure;
-        border-radius: 1rem;
-        margin: auto;
-        width: 90vw;
         height: auto;
         overflow: hidden;
     }
@@ -61,7 +56,7 @@ function submitMessage() {
         margin: 0% 5% 5% 5%;
     }
     .chatTitle {
-        background-color: grey;
+        background-color: rgb(255, 255, 255);
         padding: 1% 5%;
     }
     .chatMessageUser {

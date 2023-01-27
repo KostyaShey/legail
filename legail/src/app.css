@@ -1,8 +1,9 @@
 body {
-    background-image: url('../static/vintage-judicial-system-elements-set-with-judge-handcuffs-police-badge-scales-gavel-feather-law-book-themis-statue-courthouse-isolated_1284-38527.webp');
+    background-image: url('../static/background.png');
     background-repeat: repeat;
     background-size: 30%;
     margin: auto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 button {
@@ -20,12 +21,8 @@ button:hover {
 }
 
 .default-container {
-    background-color: rgb(247, 243, 244, 0.9);
+    background-color: rgb(247, 243, 244, 0.8);
     color: black;
     margin-bottom: 3%;
     box-shadow: 1px 5px 10px black;
-}
-
-p {
-    
 }
