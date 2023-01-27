@@ -70,17 +70,16 @@ function submitMessage() {
     }
     .chatInput {
 		display: grid;
-		grid-template-columns: repeat(2, 88% 5%);
+		grid-template-columns: repeat(2, 85% 5%);
 		grid-gap: 5%;
-        padding: 2% 5%;
-        margin-bottom: 5%;
+        padding: 5% 5%;
 	}
     button {
         width: 2rem;
         height: 2rem;
     }
     input {
-        height: 100%;
+        height: 90%;
         width: 100%;
         border: none;
         background: transparent;
