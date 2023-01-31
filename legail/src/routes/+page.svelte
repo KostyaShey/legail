@@ -1,2 +1,19 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import UserConversations from "./components/UserConversations.svelte";
+    import LoginPage from "./components/LoginPage.svelte";
+    import { loginState } from "./stores/appState";
+</script>
+
+
+{#if $loginState}
+    <UserConversations />
+{:else}
+    <LoginPage />
+{/if}
+
+<style>
+    .title {
+        padding-bottom: 5%;
+        text-align: center;
+    }
+</style>

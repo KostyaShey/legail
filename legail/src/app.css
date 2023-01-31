@@ -1,0 +1,53 @@
+body {
+    background-image: url('../static/background.png');
+    background-repeat: repeat;
+    background-size: 30%;
+    margin: auto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+button {
+    background-color: transparent;
+    min-width: 3rem;
+    min-height: 3rem;
+}
+
+button:hover {
+    box-shadow: 1px 3px 5px black;
+}
+
+.mi {
+    font-size: 1.4rem;
+}
+
+.default-container {
+    background-color: rgb(247, 243, 244, 0.8);
+    color: black;
+    margin-bottom: 3%;
+    box-shadow: 1px 5px 10px black;
+}
+
+.centered {
+    display: flex;
+    justify-content:center;
+}
+
+.clickableIcon {
+    overflow: hidden;
+    caret-color: transparent;
+    min-width: 3rem;
+    min-height: 3rem;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.clickableIcon i {
+    font-size: 2rem;
+    position: absolute;
+    padding-top: 1%;
+}
+
+.clickableIcon i:hover {
+    color: dimgray;
+}
