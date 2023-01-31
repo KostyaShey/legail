@@ -24,6 +24,17 @@ p {
     line-height: 1.5rem;
 }
 
+.inputText {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid black;
+    padding: 0 0 0 3%;
+}
+
+.inputReadonly {
+    cursor: not-allowed;
+}
+
 .mi {
     font-size: 1.4rem;
 }

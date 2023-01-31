@@ -3,7 +3,7 @@
 </script>
 
 <div class="chatInput">
-    <input type="input" name="name" />
+    <input class="inputText inputReadonly" type="input" readonly name="name" />
     <button><i class="mi mi-lock" ><span class="u-sr-only"></span></i></button>
 </div>
 
@@ -16,12 +16,6 @@
             padding: 5% 5%;
         }
 
-    input {
-        height: 90%;
-        width: 100%;
-        border: none;
-        background: transparent;
-        border-bottom: 2px solid black;
-    }
+    
 
 </style>

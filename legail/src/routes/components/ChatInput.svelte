@@ -21,7 +21,7 @@
 </script>
 
 <div class="chatInput">
-    <input type="input" bind:value={chatInput} />
+    <input class="inputText" type="input" bind:value={chatInput} />
     <button on:click={submitMessage}>></button>
 </div>
 
@@ -33,13 +33,5 @@
             grid-gap: 5%;
             padding: 5% 5%;
         }
-
-    input {
-        height: 90%;
-        width: 100%;
-        border: none;
-        background: transparent;
-        border-bottom: 2px solid black;
-    }
 
 </style>
