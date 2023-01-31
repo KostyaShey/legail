@@ -17,6 +17,7 @@ function returnSenderLabel (messageLabel) {
 </div>
 
 <style>
+
     .chatHistory {
         margin: 7% 5% 5% 5%;
     }
@@ -26,4 +27,5 @@ function returnSenderLabel (messageLabel) {
     .chatMessageComputer {
         color: green;
     }
+    
 </style>
