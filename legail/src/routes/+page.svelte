@@ -2,6 +2,7 @@
     import UserConversations from "./components/UserConversations.svelte";
     import LoginPage from "./components/LoginPage.svelte";
     import { loginState } from "./stores/appState";
+    import ChatboxDemo from "./components/ChatboxDemo.svelte";
 </script>
 
 
@@ -9,6 +10,7 @@
     <UserConversations />
 {:else}
     <LoginPage />
+    <ChatboxDemo />
 {/if}
 
 <style>

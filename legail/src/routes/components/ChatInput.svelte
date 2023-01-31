@@ -15,13 +15,13 @@
         addToMessages(chatObject);
         
         chatInput = ''
-        
+
     };
 
 </script>
 
 <div class="chatInput">
-    <input type="input" bind:value={chatInput} name="name" />
+    <input type="input" bind:value={chatInput} />
     <button on:click={submitMessage}>></button>
 </div>
 
