@@ -3,13 +3,12 @@
 import { chatInfo, chatMessages } from "../stores/chatSession";
 import { slide } from 'svelte/transition';
 import ChatTitle from "./ChatTitle.svelte";
+import ChatHistory from "./ChatHistory.svelte";
 
 let minimized = false;
 const minimizedToggle = () => {minimized = !minimized;}
 
-function returnSenderLabel (messageLabel) {
-    return messageLabel ? "User:" : "Bot:";
-};
+
 
 let chatInput = '';
 
@@ -37,13 +36,7 @@ function submitMessage() {
     
     {#if !minimized}
         <div transition:slide>
-            <div class="chatHistory">
-                {#each $chatMessages as message}
-                    <div class:chatMessageUser={message.userMessage} class:chatMessageComputer={!message.userMessage}>
-                        <p>{returnSenderLabel(message.userMessage)} {message.text}</p>
-                    </div>
-                {/each}
-            </div>
+            <ChatHistory chatMessages={chatMessages}/>
             <div class="chatInput">
                 <input type="input" bind:value={chatInput} name="name" />
                 <button on:click={submitMessage}>></button>
@@ -58,16 +51,7 @@ function submitMessage() {
     .chatbox {
         height: auto;
     }
-    .chatHistory {
-        margin: 7% 5% 5% 5%;
-    }
 
-    .chatMessageUser {
-        text-align: end;
-    }
-    .chatMessageComputer {
-        color: green;
-    }
     .chatInput {
 		display: grid;
 		grid-template-columns: repeat(2, 85% 5%);
