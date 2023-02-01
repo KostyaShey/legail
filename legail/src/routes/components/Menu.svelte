@@ -8,9 +8,9 @@
 <div class="menu default-container">
     <div class="loginArea" transition:slide>
         {#if $loginState}
-            <p>Currently logged in as "User"</p><button on:click={loginState.change}>Logout</button>
+            <button on:click={loginState.change}>Logout</button>
         {:else}
-            <p>You must log in in order to see menu options</p><button on:click={loginState.change}>Login</button>
+            <button on:click={loginState.change}>Login</button>
         {/if}
     </div>
     {#if $loginState}
@@ -35,7 +35,7 @@
     .loginArea {
         display: flex;
         justify-content: end;
-        vertical-align: middle;
+        vertical-align: top;
         gap: 3%;
     }
     .menuOption {
