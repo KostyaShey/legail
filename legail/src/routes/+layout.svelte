@@ -4,7 +4,9 @@
 	import '../app.css'
 </script>
 <div class="main-grid">
-	<Nav />
+	<div class="navigation">
+		<Nav />
+	</div>
 	<div class="content">
 		<slot></slot>
 	</div>
