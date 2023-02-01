@@ -9,7 +9,6 @@
 {#if $loginState}
     <UserConversations />
 {:else}
-    <LoginPage />
     <ChatboxDemo />
 {/if}
 

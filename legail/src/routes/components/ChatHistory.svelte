@@ -1,17 +1,48 @@
 <script>
 
-export let chatMessages
+    import { fade } from "svelte/transition";
 
-function returnSenderLabel (messageLabel) {
-    return messageLabel ? "User:" : "Bot:";
-};
+    export let chatMessages
+
+    function returnSenderLabel (messageLabel) {
+        return messageLabel ? "User:" : "Bot:";
+    };
+
+    function typewriter(node, { speed = 1 }) {
+            const valid = (
+                node.childNodes.length === 1 &&
+                node.childNodes[0].nodeType === Node.TEXT_NODE
+            );
+
+            if (!valid) {
+                throw new Error(`This transition only works on elements with a single text node child`);
+            };
+
+            const text = node.textContent;
+            const duration = text.length / (speed * 0.01);
+
+            return {
+                duration,
+                tick: t => {
+                    const i = Math.trunc(text.length * t);
+                    node.textContent = text.slice(0, i);
+                }
+        };
+    }
+
 
 </script>
 
 <div class="chatHistory">
     {#each $chatMessages as message}
         <div class:chatMessageUser={message.userMessage} class:chatMessageComputer={!message.userMessage}>
-            <p>{returnSenderLabel(message.userMessage)} {message.text}</p>
+            {#if message.userMessage}
+                <p>{message.text}</p>
+            {:else}
+                <p transition:typewriter>{message.text}</p>
+            {/if}
+            
+            
         </div>
     {/each}
 </div>
