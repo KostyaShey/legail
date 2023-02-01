@@ -16,6 +16,35 @@ button:hover {
     box-shadow: 1px 3px 5px black;
 }
 
+button i {
+    line-height: 50%;
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+.main-grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+.inputText {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid black;
+    padding: 0 0 0 3%;
+    width: 100%;
+    height: 100%;
+}
+
+.inputReadonly {
+    cursor: not-allowed;
+    caret-color: transparent;
+}
+
 .mi {
     font-size: 1.4rem;
 }
@@ -25,6 +54,14 @@ button:hover {
     color: black;
     margin-bottom: 3%;
     box-shadow: 1px 5px 10px black;
+}
+
+.navigation-elements {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height: auto;
+    padding: 4% 5%;
 }
 
 .centered {
