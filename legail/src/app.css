@@ -24,6 +24,13 @@ p {
     line-height: 1.5rem;
 }
 
+.main-grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
 .inputText {
     border: none;
     background: transparent;
@@ -44,6 +51,14 @@ p {
     color: black;
     margin-bottom: 3%;
     box-shadow: 1px 5px 10px black;
+}
+
+.navigation-elements {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height: auto;
+    padding: 4% 5%;
 }
 
 .centered {

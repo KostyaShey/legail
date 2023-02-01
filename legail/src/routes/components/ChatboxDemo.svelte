@@ -68,12 +68,8 @@
     </div>
     
     
-    <style>
-        .chatbox {
-            height: auto;
+<style>
+    .chatbox {
+        height: auto;
     }
-    
-    
-        
-        
-    </style>
+</style>
