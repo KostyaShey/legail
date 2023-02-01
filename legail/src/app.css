@@ -9,7 +9,7 @@ body {
 button {
     background-color: transparent;
     min-width: 3rem;
-    min-height: 3rem;
+    height: 3rem;
 }
 
 button:hover {
