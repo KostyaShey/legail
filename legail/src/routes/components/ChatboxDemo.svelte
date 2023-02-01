@@ -11,7 +11,7 @@
         {
             id: "asjnfdoijnasoidfj",
             userMessage: true,
-            text: "Do I owe the apps I bought on apple store"
+            text: "Do I owe the apps I bought on apple store?"
         },
         {
             id: "asjnidfj",
