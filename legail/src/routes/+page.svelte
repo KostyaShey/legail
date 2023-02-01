@@ -9,7 +9,7 @@
 {#if $loginState}
     <UserConversations />
 {:else}
-    <ChatboxDemo /><ChatboxDemo /><ChatboxDemo />
+    <ChatboxDemo />
 {/if}
 
 <style>
