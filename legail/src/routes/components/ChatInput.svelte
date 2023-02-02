@@ -4,6 +4,12 @@
 
     let chatInput = '';
 
+    const handleKeypress = (event) => {
+        if(event.keyCode == 13) {
+            submitMessage()
+        }
+    }
+
     function submitMessage() {
         
         const chatObject = {
@@ -21,7 +27,7 @@
 </script>
 
 <div class="chatInput">
-    <input class="inputText" type="input" bind:value={chatInput} />
+    <input on:keypress={handleKeypress} class="inputText" type="input" bind:value={chatInput} />
     <button on:click={submitMessage}>></button>
 </div>
 
