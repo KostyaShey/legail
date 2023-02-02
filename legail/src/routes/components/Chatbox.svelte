@@ -9,9 +9,19 @@ import ChatInput from "./ChatInput.svelte";
 let minimized = false;
 const minimizedToggle = () => {minimized = !minimized;}
 
+const defaultReply = {
+        id: crypto.randomUUID(),
+        userMessage: false,
+        text: "I can't answer your question for now. This is just a Frontend Mock-Up."
+    }
+
+const addDefaultReply = () => {
+		$chatMessages = [...$chatMessages, defaultReply];
+};
 
 const addToMessages = (chatObject) => {
 		$chatMessages = [...$chatMessages, chatObject];
+        addDefaultReply();
 };
 
 
